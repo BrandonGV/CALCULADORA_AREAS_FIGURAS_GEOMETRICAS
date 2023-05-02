@@ -64,7 +64,7 @@ while opcion != SALIR:
         area = area_hexagono(lado)
         #Llamar a mostrar datos
         mostrar_hexagono(area)
-    elif opcion ==area_sector_circular:
+    elif opcion ==SECTOR_CIRCULAR:
         #llamar la funcion de solicitar datos
         radio,angulo= datos_area_circular()
         #llamar a area
