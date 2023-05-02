@@ -1,10 +1,14 @@
-from operaciones import area_cuadrado,area_circulo,area_triangulo
-from interfaz import menu,datos_cuadrado,datos_circulo,datos_triangulo,mostrar_circulo,mostrar_cuadrado,mostrar_triangulo
-
+from operaciones import *
+from interfaz import *
 CUADRADO = 1
 CIRCULO = 2
 TRIANGULO = 3
-SALIR = 4
+RECTANGULO = 4
+TRAPECIO = 5
+PENTAGONO = 6
+HEXAGONO = 7
+SECTOR_CIRCULAR= 8
+SALIR = 9
 #
 opcion = 0
 
@@ -32,6 +36,41 @@ while opcion != SALIR:
         area = area_triangulo(base,altura)
         #Llamar a mostrar datos
         mostrar_triangulo(area)
+    elif opcion ==RECTANGULO:
+        #llamar la funcion de solicitar datos
+        base,altura = datos_rectangulo()
+        #llamar a area
+        area = area_rectangulo(base,altura)
+        #Llamar a mostrar datos
+        mostrar_rectangulo(area)
+    elif opcion ==TRAPECIO:
+        #llamar la funcion de solicitar datos
+        base_mayor,base_menor,altura = datos_trapecio()
+        #llamar a area
+        area = area_trapecio(base_mayor,base_menor,altura)
+        #Llamar a mostrar datos
+        mostrar_trapecio(area)
+    elif opcion ==PENTAGONO:
+        #llamar la funcion de solicitar datos
+        lado= datos_pentagono()
+        #llamar a area
+        area = area_pentagono(lado)
+        #Llamar a mostrar datos
+        mostrar_pentagono(area)
+    elif opcion ==HEXAGONO:
+        #llamar la funcion de solicitar datos
+        lado= datos_hexagono()
+        #llamar a area
+        area = area_hexagono(lado)
+        #Llamar a mostrar datos
+        mostrar_hexagono(area)
+    elif opcion ==area_sector_circular:
+        #llamar la funcion de solicitar datos
+        radio,angulo= datos_area_circular()
+        #llamar a area
+        area = area_sector_circular(radio,angulo)
+        #Llamar a mostrar datos
+        mostrar_area_circular(area)
     elif opcion == SALIR:
         break 
     else:
